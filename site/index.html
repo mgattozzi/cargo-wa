@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> cargo wasm </title>
+    <script>
+      fetch('lib.wasm').then(response =>
+        response.arrayBuffer()
+      ).then(bytes =>
+        WebAssembly.instantiate(bytes, {})
+      ).then(results => {
+        alert(results.instance.exports.add_one(41));
+      });
+    </script>
+  </head>
+</html>

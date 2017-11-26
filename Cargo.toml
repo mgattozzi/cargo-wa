@@ -1,0 +1,23 @@
+[package]
+name = "cargo-wa"
+version = "0.1.0"
+authors = ["Michael Gattozzi <mgattozzi@gmail.com>"]
+description = "A Rust flavored replacement for the classic cowsay"
+documentation = "https://docs.rs/ferris-says"
+homepage = "https://github.com/mgattozzi/ferris-says"
+repository = "https://github.com/mgattozzi/ferris-says"
+readme = "README.md"
+keywords = ["cargo", "wasm", "web-assembly", "WASM", "subcommand"]
+categories = [
+  "command-line-utilities",
+]
+license = "MIT/Apache-2.0"
+
+[badges]
+travis-ci = { repository = "mgattozzi/cargo-wasm", branch = "master" }
+appveyor = { repository = "mgattozzi/cargo-wasm", branch = "master", service = "github" }
+
+[dependencies]
+clap = "2.27"
+failure = "0.1"
+failure_derive = "0.1"
