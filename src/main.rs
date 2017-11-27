@@ -58,7 +58,7 @@ fn run() -> Result<(), Error> {
                         )
                          .get_matches();
 
-    if let Some(matches) = matches.subcommand_matches("wasm") {
+    if let Some(matches) = matches.subcommand_matches("wa") {
 
         if let Some(matches) = matches.subcommand_matches("new") {
             cargo_new(matches.value_of("project_name").unwrap())?;
