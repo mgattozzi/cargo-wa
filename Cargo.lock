@@ -43,8 +43,8 @@ version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
-name = "cargo-wa"
-version = "0.1.0"
+name = "cargo-wasm"
+version = "0.1.1"
 dependencies = [
  "clap 2.27.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "failure 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
