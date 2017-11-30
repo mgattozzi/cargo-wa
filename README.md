@@ -10,7 +10,7 @@ installed already.
 ## How to install cargo-wasm
 
 ```bash
-cargo install cargo-wa
+cargo install cargo-wasm
 ```
 
 That's all you need to do! Then you can start running commands!
@@ -22,7 +22,7 @@ That's all you need to do! Then you can start running commands!
 If you have never setup `rustup` for wasm or `wasm-gc` yet at all you need to run:
 
 ```bash
-cargo wa setup
+cargo wasm setup
 ```
 
 This will install `wasm-gc` for you as well as setting up rustup to use the
@@ -33,7 +33,7 @@ This will install `wasm-gc` for you as well as setting up rustup to use the
 To start a new wasm project run:
 
 ```bash
-cargo wa new <project_name>
+cargo wasm new <project_name>
 ```
 
 This will setup a project with a bare wasm skeleton to run wasm function from an
@@ -44,7 +44,7 @@ This will setup a project with a bare wasm skeleton to run wasm function from an
 This command assumes you are at the project root. To build a wasm project run:
 
 ```bash
-cargo wa build
+cargo wasm build
 ```
 
 All builds are currently built/run in release mode due to a wasm bug in debug
@@ -55,7 +55,7 @@ builds. See issue #1.
 This command assumes you are at the project root. To run a wasm project run:
 
 ```bash
-cargo wa run
+cargo wasm run
 ```
 
 This will try to open your default browser and run the code from there.

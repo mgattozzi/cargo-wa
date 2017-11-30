@@ -26,7 +26,7 @@ fn run() -> Result<(), Error> {
                          .author(env!("CARGO_PKG_AUTHORS"))
                          .about(env!("CARGO_PKG_DESCRIPTION"))
                          .subcommand(
-                             SubCommand::with_name("wa")
+                             SubCommand::with_name("wasm")
                                         .about("Commiting code and it's options")
                                         .subcommand(
                                             SubCommand::with_name("new")
@@ -58,7 +58,7 @@ fn run() -> Result<(), Error> {
                         )
                          .get_matches();
 
-    if let Some(matches) = matches.subcommand_matches("wa") {
+    if let Some(matches) = matches.subcommand_matches("wasm") {
 
         if let Some(matches) = matches.subcommand_matches("new") {
             cargo_new(matches.value_of("project_name").unwrap())?;
