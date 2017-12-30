@@ -10,7 +10,7 @@ installed already.
 ## How to install cargo-wasm
 
 ```bash
-cargo install cargo-wa
+cargo install --git https://github.com/mgattozzi/cargo-wa
 ```
 
 That's all you need to do! Then you can start running commands!
