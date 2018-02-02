@@ -135,7 +135,8 @@ pub fn cargo_new(project_name: &str) -> Result<(), Error> {
     let mut index = File::create(format!("{}/site/index.html", project_name))?;
 
     let index_string = String::from(INDEX_HTML);
-    let index_html = index_string.replace("lib", project_name);
+    let lib_name = project_name.replace('-', "_");
+    let index_html = index_string.replace("lib", &lib_name);
 
     lib.write_all(LIB_RS.as_bytes())?;
     index.write_all(index_html.as_bytes())?;
