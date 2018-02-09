@@ -12,6 +12,9 @@ installed already.
 ## How to install cargo-wasm
 
 ```bash
+# For the latest unstable version
+cargo install --git https://github.com/mgattozzi/cargo-wasm
+# For the version released to crates.io
 cargo install cargo-wasm
 ```
 
