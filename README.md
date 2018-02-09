@@ -1,4 +1,4 @@
-# cargo-wa
+# cargo-wasm
 
 A cargo subcommand for working with Rust wasm projects!
 
