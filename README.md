@@ -2,7 +2,7 @@
 
 A cargo subcommand for working with Rust wasm projects!
 
-See https://github.com/rust-lang-nursery/rust-wasm for the manual steps if cargo-wa doesn't work for you.
+See https://github.com/rust-lang-nursery/rust-wasm for the manual steps if cargo-wasm doesn't work for you.
 
 ## Build requirements
 
