@@ -40,6 +40,11 @@ fn run() -> Result<(), Error> {
                                                 .arg(Arg::with_name("release")
                                                      .help("Make a release build")
                                                      .long("release")
+                                                     .required(false))
+                                                .arg(Arg::with_name("output_dir")
+                                                     .help("Path to output wasm file")
+                                                     .takes_value(true)
+                                                     .short("o")
                                                      .required(false)))
                                         .subcommand(
                                             SubCommand::with_name("run")
@@ -66,7 +71,7 @@ fn run() -> Result<(), Error> {
         } else if let Some(matches) = matches.subcommand_matches("build") {
             let _release = matches.is_present("release");
             // There's a bug is wasm-gc isn't run
-            cargo_build(true)?;
+            cargo_build(true, matches.value_of("output_dir"))?;
 
         } else if let Some(matches) = matches.subcommand_matches("run") {
             let _release = matches.is_present("release");

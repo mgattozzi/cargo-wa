@@ -8,7 +8,7 @@ use std::fs::{ OpenOptions, File };
 use std::io::Write;
 use assets::*;
 
-pub fn cargo_build(release: bool) -> Result<(), Error> {
+pub fn cargo_build(release: bool, output_dir: Option<&str>) -> Result<(), Error> {
     if release {
         let exit = Command::new("cargo")
             .arg("build")
@@ -45,11 +45,12 @@ pub fn cargo_build(release: bool) -> Result<(), Error> {
     // We know this is possible if we found the file and Rust should make it UTF-8 valid.
     // Hopefully. Should handle this better later.
     let filename = wasm.file_name().unwrap().to_str().unwrap();
-    let path = format!("site/{}", &filename);
+    let target_dir = output_dir.unwrap_or("site");
+    let path = format!("{}/{}", &target_dir, &filename);
     fs::copy(&wasm, &path)?;
 
     if release {
-        let temp = format!("{}/{}.temp", "site", &filename);
+        let temp = format!("{}/{}.temp", &target_dir, &filename);
         let exit = Command::new("wasm-gc")
             .arg(&path)
             .arg(&temp)
@@ -105,7 +106,7 @@ pub fn exit_code(val: ExitStatus) -> Option<i32> {
 }
 
 pub fn cargo_run(release: bool, path: Option<&str>) -> Result<(), Error> {
-    cargo_build(release)?;
+    cargo_build(release, None)?;
 
     match path {
         Some(p) => open_project(&Path::new(p)),
