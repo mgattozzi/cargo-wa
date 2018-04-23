@@ -1,3 +1,10 @@
+# Unsupported
+
+Right now I have quite a few things going on and I'm more involved with the wasm-wg group currently.
+I originally made this as a way to wrap the need to call `--target=wasm32-unknown-unknown` each
+time. While you can still use this as is, I won't be releasing fixes or taking prs anytime soon as
+this project is just not a priority for me right now.
+
 # cargo-wasm
 
 A cargo subcommand for working with Rust wasm projects!
