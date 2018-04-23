@@ -1,6 +1,6 @@
 [package]
 name = "cargo-wasm"
-version = "0.4.0"
+version = "0.4.1"
 authors = ["Michael Gattozzi <mgattozzi@gmail.com>"]
 description = "Make developing a wasm project in Rust easy"
 documentation = "https://docs.rs/cargo-wasm"
