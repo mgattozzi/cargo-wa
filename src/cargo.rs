@@ -46,6 +46,9 @@ pub fn cargo_build(release: bool, output_dir: Option<&str>) -> Result<(), Error>
     // Hopefully. Should handle this better later.
     let filename = wasm.file_name().unwrap().to_str().unwrap();
     let target_dir = output_dir.unwrap_or("site");
+    if target_dir == "site" {
+        fs::create_dir_all("/site")?;
+    }
     let path = format!("{}/{}", &target_dir, &filename);
     fs::copy(&wasm, &path)?;
 
